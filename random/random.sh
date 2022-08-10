@@ -45,9 +45,9 @@ stress()
         echo | tee -a $output
         echo "*** Loop "$i	"***"| tee -a $output
         echo | tee -a $output
-        echo ./fio --filename=/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
-        #./fio --filename=/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
-        ./fio --filename=/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
+        echo ./fio --filename=/dev/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
+        #./fio --filename=/dev/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
+        ./fio --filename=/dev/$target $rw_behavior --bs=$bs\k --iodepth=$qd --name=$bs\k_$rw\_QD$qd ${para_line} | tee -a $output
         
         bash Seq_to_Rnd.sh $target $i
 
